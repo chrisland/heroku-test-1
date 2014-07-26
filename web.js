@@ -3,12 +3,14 @@ var logfmt = require("logfmt");
 var app = express();
 
 app.use(logfmt.requestLogger());
+/*
 
 app.get('/', function(req, res) {
   res.send('Hello World with DB !!');
 });
+*/
 
-app.get('/db', function(req, res) {
+app.get('/', function(req, res) {
 	//res.send('DB !! WUHU !!!!');
 	
 	var mongo = require('mongodb');
@@ -23,7 +25,7 @@ app.get('/db', function(req, res) {
 	
 	mongo.Db.connect(mongoUri, function (err, db) {
 		db.collection('mydocs2', function(er, collection) {
-			collection.insert({'mykey': 'myvalue','name','chris'}, {safe: true}, function(er,rs) {
+			collection.insert({'mykey': 'myvalue','name':'chris'}, {safe: true}, function(er,rs) {
 				res.send(' # DONE !!! ');
 			});
 		});
