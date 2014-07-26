@@ -16,7 +16,7 @@ app.listen(port, function() {
 
 
 
-//var mongo = require('mongodb');
+var mongo = require('mongodb');
 /*
 
 var mongoUri = process.env.MONGOSOUP_URI ||
