@@ -21,6 +21,16 @@ app.get('/db', function(req, res) {
 	res.send(' # '+mongoUri);
 	
 	
+	mongo.Db.connect(mongoUri, function (err, db) {
+		db.collection('mydocs', function(er, collection) {
+			collection.insert({'mykey': 'myvalue'}, {safe: true}, function(er,rs) {
+				res.send(' # DONE !!! ');
+			});
+		});
+	});
+	
+
+	
 });
 
 var port = Number(process.env.PORT || 5000);
@@ -37,12 +47,7 @@ app.listen(port, function() {
 
 /*
 
-mongo.Db.connect(mongoUri, function (err, db) {
-  db.collection('mydocs', function(er, collection) {
-    collection.insert({'mykey': 'myvalue'}, {safe: true}, function(er,rs) {
-    });
-  });
-});
+
 
 
 */
