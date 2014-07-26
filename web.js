@@ -9,7 +9,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/db', function(req, res) {
-	res.send('DB !! WUHU !!!!');
+	//res.send('DB !! WUHU !!!!');
 	
 	var mongo = require('mongodb');
 	
