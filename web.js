@@ -16,7 +16,8 @@ app.listen(port, function() {
 
 
 
-var mongo = require('mongodb');
+//var mongo = require('mongodb');
+/*
 
 var mongoUri = process.env.MONGOSOUP_URI ||
   process.env.MONGOHQ_URL ||
@@ -29,3 +30,4 @@ mongo.Db.connect(mongoUri, function (err, db) {
   });
 });
 
+*/
