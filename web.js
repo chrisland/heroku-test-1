@@ -18,12 +18,12 @@ app.get('/db', function(req, res) {
 		process.env.MONGOSOUP_URL ||
 		'mongodb://localhost/mydb';
 	
-	res.send(' # '+mongoUri);
+	//res.send(' # '+mongoUri);
 	
 	
 	mongo.Db.connect(mongoUri, function (err, db) {
-		db.collection('mydocs', function(er, collection) {
-			collection.insert({'mykey': 'myvalue'}, {safe: true}, function(er,rs) {
+		db.collection('mydocs2', function(er, collection) {
+			collection.insert({'mykey': 'myvalue','name','chris'}, {safe: true}, function(er,rs) {
 				res.send(' # DONE !!! ');
 			});
 		});
